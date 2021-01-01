@@ -92,19 +92,19 @@ function loadModels() {
 
 
     for (i = 0; i < 3; i++) {
-        arr[i] = new THREE.Vector3(0, 0 + i, 0);
-        arr2[i] = new THREE.Vector3(0 + i, 0 , 0);
-        arr3[i] = new THREE.Vector3(0 + i, 0 + i, 0);
-        arr4[i] = new THREE.Vector3(0 - i, 0 - i, 0);
-        arr5[i] = new THREE.Vector3(0 - i, 0 , 0);
-        arr6[i] = new THREE.Vector3(0, 0 - i, 0);
-        arr7[i] = new THREE.Vector3(0 + i, 0 - i, 0);
-        arr8[i] = new THREE.Vector3(0 - i, 0 + i, 0);
-        arr.push(arr[i], arr2[i], arr3[i], arr4[i], arr5[i], arr6[i],arr7[i], arr8[i])
+        arr[i] = new THREE.Vector3(0 - 2*i, 0 , 0);
+        arr2[i] = new THREE.Vector3(0 + 2*i, 0 , 0);
+        // arr3[i] = new THREE.Vector3(0 + i, 0 + i, 0);
+        // arr4[i] = new THREE.Vector3(0 - i, 0 - i, 0);
+        // arr5[i] = new THREE.Vector3(0 - i, 0 , 0);
+        // arr6[i] = new THREE.Vector3(0, 0 - i, 0);
+        // arr7[i] = new THREE.Vector3(0 + i, 0 - i, 0);
+        // arr8[i] = new THREE.Vector3(0 - i, 0 + i, 0);
+        arr.push(arr[i], arr2[i])
     }
 
     arr.forEach((el) => {
-        loader.load('models/Parrot.glb', gltf => onLoad(gltf, el), onProgress, onError);
+        loader.load('models/snack.glb', gltf => onLoad(gltf, el), onProgress, onError);
     })
 
 
@@ -143,6 +143,8 @@ function update() {
 
 
 function render() {
+    // camera.position.x += 0.05
+    //     camera.position.y += 0.05
 
   renderer.render( scene, camera );
 
